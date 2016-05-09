@@ -36,20 +36,30 @@ command! RemoveAllButERRORLogs call RemoveAllButERRORLogs()
 
 if !exists("*RemoveAtExpLogs")
     function RemoveAtExpLogs()
-        silent! execute "normal! mz:g/^\\sat\\s/d\<CR>'z"
+        silent! execute "normal! mz:g/^\\s\*at\\s/d\<CR>'z"
     endfunction
 endif
 command! RemoveAtExpLogs call RemoveAtExpLogs()
 
-if !exists("*RemoveButRange")
-    function RemoveButRange(day,start,end)
+if !exists("*RemoveButRangeDayTime")
+    function RemoveButRangeDayTime(day,start,end)
             "we set the cursor at the first match of the start date, then delete everything above"
             execute "normal! gg/".a:day." ".a:start."\<CR>kVggx\<CR>"
             "we set the cursor at the last match of the end date, then delete everything below"
-            execute "normal! G?".a:day." ".a:end."\<CR>jVGx\<CR>"
+            execute "normal! G?".a:day." ".a:end."\<CR>jVGx\<CR>gg"
     endfunction
 endif
-command! -nargs=* RemoveButRange call RemoveButRange(<f-args>)
+command! -nargs=* RemoveButRangeDayTime call RemoveButRangeDayTime(<f-args>)
+
+if !exists("*RemoveButRangeFullDateTime")
+    function RemoveButRangeFullDateTime(date,start,end)
+            "we set the cursor at the first match of the start date, then delete everything above"
+            execute "normal! gg/".a:date." ".a:start."\<CR>kVggx\<CR>"
+            "we set the cursor at the last match of the end date, then delete everything below"
+            execute "normal! G?".a:date." ".a:end."\<CR>jVGx\<CR>gg"
+    endfunction
+endif
+command! -nargs=* RemoveButRangeFullDateTime call RemoveButRangeFullDateTime(<f-args>)
 
 if !exists("*RemoveAllButClass")
     function RemoveAllButClass(name)
