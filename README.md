@@ -81,3 +81,11 @@ This will create a mark fold of the stack below the cursor. It assumes that the 
 with at lease one space.
 
 ![gif](http://i.imgur.com/rrVUKji.gif)
+
+##Mappings
+
+You can map the commands that you use the most on your vimrc. 
+For example : 
+
+`:nnoremap <leader>bf :call FoldStackBelow()<CR>`
+
