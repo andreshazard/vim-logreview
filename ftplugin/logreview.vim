@@ -47,6 +47,7 @@ if !exists("*RemoveButRangeDayTime")
             execute "normal! gg/".a:day." ".a:start."\<CR>kVggx\<CR>"
             "we set the cursor at the last match of the end date, then delete everything below"
             execute "normal! G?".a:day." ".a:end."\<CR>jVGx\<CR>gg"
+            execute "normal! gg"
     endfunction
 endif
 command! -nargs=* RemoveButRangeDayTime call RemoveButRangeDayTime(<f-args>)
@@ -56,7 +57,8 @@ if !exists("*RemoveButRangeFullDateTime")
             "we set the cursor at the first match of the start date, then delete everything above"
             execute "normal! gg/".a:date." ".a:start."\<CR>kVggx\<CR>"
             "we set the cursor at the last match of the end date, then delete everything below"
-            execute "normal! G?".a:date." ".a:end."\<CR>jVGx\<CR>gg"
+            execute "normal! G?".a:date." ".a:end."\<CR>jVGx\<CR>"
+            execute "normal! gg"
     endfunction
 endif
 command! -nargs=* RemoveButRangeFullDateTime call RemoveButRangeFullDateTime(<f-args>)

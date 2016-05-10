@@ -3,11 +3,11 @@ if exists("b:current_syntax")
 endif
 
 let b:current_syntax = "logreview"
-syntax keyword logYellow WARN
-syntax keyword logGreen INFO DEBUG
+syntax keyword logYellow WARN WARNING
+syntax keyword logGreen INFO DEBUG LOG
 syntax keyword logRed  STACK Stack stack SEVERE Severe severe
 syntax match logRed "for programmers"
-syntax keyword logError Exception exception ERROR
+syntax keyword logError Exception exception ERROR FATAL
 
 highlight Keyword ctermfg=Yellow
 highlight link logYellow Keyword
