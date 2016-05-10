@@ -46,25 +46,28 @@ The plugin will load the following commands when working with a logreview file t
 
 ![gif](http://i.imgur.com/ppv97Qx.gif)
 
-`RemoveButRangeDayTime day start end`<br>
+`:RemoveButRangeDayTime day start end`<br>
 
-This will remove all lines except the ones on the range you provided. For example you can call :
-*RemoveButRange 09 10:52 10:54* to get only the logs between 10:52 and 10:54 on day 09. This works
+This will remove all lines except the ones on the range you provided. For example you can call : <br>
+*RemoveButRange 09 10:52 10:54* 
+to get only the logs between 10:52 and 10:54 on day 09. This works
 using the search command so a line cotaining those lines needs to exist on the file.
 Example of a log line where this would work :<br> 
 
 *2016-04-07 10:52:04,459 [AsyncAppender-Dispatcher-Thread-18] DEBUG com.whatever.module.mail.service*
 
-`RemoveButRangeFullDateTime date start end`<br>
+`:RemoveButRangeFullDateTime date start end`<br>
 
-This will remove all lines except the ones on the range you provided. For example you can call :
-*RemoveButRange 08.04.2016 10:52 10:54* to get only the logs between 10:52 and 10:54 of the date 08.04.2016. This works
+This will remove all lines except the ones on the range you provided. For example you can call : <br>
+*RemoveButRange 08.04.2016 10:52 10:54* <br>
+
+to get only the logs between 10:52 and 10:54 of the date 08.04.2016. This works
 using the search command so a line cotaining those lines needs to exist on the file.
 Example of a log line where this would work :<br> 
 
 *08.04.2016 10:52:04,459 [AsyncAppender-Dispatcher-Thread-18] DEBUG com.trainingrocket.module.mail.service*
 
-`RemoveAllButClass`<br>
+`:RemoveAllButClass`<br>
 
 This will remove all lines except the ones containing the string you passed to the function.
 For example you can call :
@@ -72,9 +75,17 @@ For example you can call :
 
 ![gif](http://i.imgur.com/VsouksS.gif)
 
-`FoldStackBelow`<br>
+`:FoldStackBelow`<br>
 
 This will create a mark fold of the stack below the cursor. It assumes that the stack lines start
 with at lease one space.
 
-[gif](http://i.imgur.com/rrVUKji.gif)
+![gif](http://i.imgur.com/rrVUKji.gif)
+
+##Mappings
+
+You can map the commands that you use the most on your vimrc. 
+For example : 
+
+`:nnoremap <leader>bf :call FoldStackBelow()<CR>`
+
