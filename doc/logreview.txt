@@ -1,0 +1,63 @@
+*logreview.txt* log navigation inside vim
+
+ _                            _
+ | | ___   __ _ _ __ _____   _(_) _____      __
+ | |/ _ \ / _` | '__/ _ \ \ / / |/ _ \ \ /\ / /
+ | | (_) | (_| | | |  __/\ V /| |  __/\ V  V /
+ |_|\___/ \__, |_|  \___| \_/ |_|\___| \_/\_/
+          |___/
+
+          log files navigation inside VIM.
+          Syntax Highlighting, functions, and more
+
+INTRODUCTION                                                             *logreview*
+
+Plugin to help review logs files within VIM. This was created with Java log files in mind, however the funcionallity could work for other log files as well or you can edit this plugin or send a pull requeest to suite your needs.
+
+USAGE                                                                    *logreview-usage*
+
+The plugin will detect your .log files and set the filetype as logreview. If you need work with log files that do not have the .log extension. You can run :
+
+                :set filetype=logreview
+
+The logreview file types will have highlighting on specific keywords like : INFO, DEBUG, WARN, ERROR, etc. You can see this on the syntax folder.
+
+FUNCTIONS                                                               *logreview-functions*
+
+The plugin will load the following commands when working with a logreview file types.
+
+*:RemoveDEBUGLogs* Will remove all lines containing a "DEBUG" log
+*:RemoveINFOLogs* Will remove all lines containing a "INFO" log
+*:RemoveGREENLogs* Will remove all lines containing a "INFO" or "DEBUG" log
+*:RemoveWARNLogs* Will remove all lines containing a "WARN" log
+*:RemoveAllButERRORLogs* Will remove all lines that do not contain an "ERROR" log
+*:RemoveAtExpLogs* Will remove all lines that contain an " at com.project.package classname test" type log
+
+
+                                                                        *:RemoveButRangeDayTime* day start end
+
+This will remove all lines except the ones on the range you provided. For example you can call :
+RemoveButRange 09 10:52 10:54 to get only the logs between 10:52 and 10:54 on day 09. This works using the search command so a line cotaining those lines needs to exist on the file. Example of a log line where this would work :
+2016-04-07 10:52:04,459 [AsyncAppender-Dispatcher-Thread-18] DEBUG com.whatever.module.mail.service
+
+                                                                       *:RemoveButRangeFullDateTime* date start end
+
+This will remove all lines except the ones on the range you provided. For example you can call :
+RemoveButRange 08.04.2016 10:52 10:54
+
+to get only the logs between 10:52 and 10:54 of the date 08.04.2016. This works using the search command so a line cotaining those lines needs to exist on the file. Example of a log line where this would work :
+08.04.2016 10:52:04,459 [AsyncAppender-Dispatcher-Thread-18] DEBUG com.trainingrocket.module.mail.service
+
+                                                                     *:RemoveAllButClass*
+
+This will remove all lines except the ones containing the string you passed to the function. For example you can call : RemoveAllBut com.example.my_bad_class to get only logs relatd to this class.
+
+                                                                    *:FoldStackBelow*
+
+This will create a mark fold of the stack below the cursor. It assumes that the stack lines start with at lease one space.
+
+MAPPINGS                                                              *logreview-mappings*
+
+You can map the commands that you use the most on your vimrc. For example :
+
+                :nnoremap <leader>bf :call FoldStackBelow()<CR>

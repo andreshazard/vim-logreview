@@ -1,0 +1,15 @@
+:FoldStackBelow	logreview.txt	/*:FoldStackBelow*
+:RemoveAllButClass	logreview.txt	/*:RemoveAllButClass*
+:RemoveAllButERRORLogs	logreview.txt	/*:RemoveAllButERRORLogs*
+:RemoveAtExpLogs	logreview.txt	/*:RemoveAtExpLogs*
+:RemoveButRangeDayTime	logreview.txt	/*:RemoveButRangeDayTime*
+:RemoveButRangeFullDateTime	logreview.txt	/*:RemoveButRangeFullDateTime*
+:RemoveDEBUGLogs	logreview.txt	/*:RemoveDEBUGLogs*
+:RemoveGREENLogs	logreview.txt	/*:RemoveGREENLogs*
+:RemoveINFOLogs	logreview.txt	/*:RemoveINFOLogs*
+:RemoveWARNLogs	logreview.txt	/*:RemoveWARNLogs*
+logreview	logreview.txt	/*logreview*
+logreview-functions	logreview.txt	/*logreview-functions*
+logreview-mappings	logreview.txt	/*logreview-mappings*
+logreview-usage	logreview.txt	/*logreview-usage*
+logreview.txt	logreview.txt	/*logreview.txt*
