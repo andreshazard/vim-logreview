@@ -1,7 +1,7 @@
 # vim-logreview
 
 Plugin to help review logs files within VIM.
-This was created with Java log files in mind, however the funcionallity could work
+This was created with Java log files in mind, however the functionality could work
 for other log files as well or you can edit this plugin or send a pull requeest to suite your needs.
 
 ## Instalation
