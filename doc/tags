@@ -1,4 +1,5 @@
 :FoldStackBelow	logreview.txt	/*:FoldStackBelow*
+:RemoveAllButCRITICALLogs	logreview.txt	/*:RemoveAllButCRITICALLogs*
 :RemoveAllButClass	logreview.txt	/*:RemoveAllButClass*
 :RemoveAllButERRORLogs	logreview.txt	/*:RemoveAllButERRORLogs*
 :RemoveAtExpLogs	logreview.txt	/*:RemoveAtExpLogs*
