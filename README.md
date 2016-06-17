@@ -42,6 +42,7 @@ The plugin will load the following commands when working with a logreview file t
 `:RemoveGREENLogs` Will remove all lines containing a "INFO" or "DEBUG" log <br>
 `:RemoveWARNLogs` Will remove all lines containing a "WARN" log <br>
 `:RemoveAllButERRORLogs` Will remove all lines that do not contain an "ERROR" log <br>
+`:RemoveAllButCRITICALLogs` Will remove all lines that do not contain a "CRITICAL" log <br>
 `:RemoveAtExpLogs` Will remove all lines that contain an " at com.project.package classname test" type log <br>
 
 ![gif](http://i.imgur.com/ppv97Qx.gif)

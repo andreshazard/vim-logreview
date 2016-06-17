@@ -34,6 +34,13 @@ if !exists("*RemoveAllButERRORLogs")
 endif
 command! RemoveAllButERRORLogs call RemoveAllButERRORLogs()
 
+if !exists("*RemoveAllButCRITICALLogs")
+    function RemoveAllButCRITICALLogs()
+        silent! execute "normal! mz:v/CRITICAL/d\<CR>'z"
+    endfunction
+endif
+command! RemoveAllButCRITICALLogs call RemoveAllButCRITICALLogs()
+
 if !exists("*RemoveAtExpLogs")
     function RemoveAtExpLogs()
         silent! execute "normal! mz:g/^\\s\*at\\s/d\<CR>'z"

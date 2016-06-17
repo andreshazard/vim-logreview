@@ -7,7 +7,7 @@ syntax keyword logYellow WARN WARNING
 syntax keyword logGreen INFO DEBUG LOG
 syntax keyword logRed  STACK Stack stack SEVERE Severe severe
 syntax match logRed "for programmers"
-syntax keyword logError Exception exception ERROR FATAL
+syntax keyword logError Exception exception ERROR FATAL CRITICAL
 
 highlight Keyword ctermfg=Yellow
 highlight link logYellow Keyword
