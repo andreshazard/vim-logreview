@@ -12,10 +12,18 @@ if !exists("*RemoveINFOLogs")
 endif
 command! RemoveINFOLogs call RemoveINFOLogs()
 
+if !exists("*RemoveVERBOSELogs")
+    function RemoveVERBOSELogs()
+        silent! execute "normal!  mz:g/VERBOSE/d\<CR>'z"
+    endfunction
+endif
+command! RemoveVERBOSELogs call RemoveVERBOSELogs()
+
 if !exists("*RemoveGREENLogs")
     function RemoveGREENLogs()
         execute "normal! mz:call RemoveINFOLogs()\<CR>"
         silent! execute "normal! :call RemoveDEBUGLogs()\<CR>'z"
+        silent! execute "normal! :call RemoveVERBOSELogs()\<CR>'z"
     endfunction
 endif
 command! RemoveGREENLogs call RemoveGREENLogs()

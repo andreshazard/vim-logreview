@@ -4,7 +4,7 @@ endif
 
 let b:current_syntax = "logreview"
 syntax keyword logYellow WARN WARNING
-syntax keyword logGreen INFO DEBUG LOG
+syntax keyword logGreen INFO DEBUG LOG Information VERBOSE
 syntax keyword logRed  STACK Stack stack SEVERE Severe severe
 syntax match logRed "for programmers"
 syntax keyword logError Exception exception ERROR FATAL CRITICAL
